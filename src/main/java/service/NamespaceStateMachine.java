@@ -144,7 +144,7 @@ public class NamespaceStateMachine extends StateMachineAdapter {
             NamespaceClosure closure = null;
 
 //            System.out.println();
-//            System.out.println("onApply request!");
+
             if(iterator.done() != null){
                 closure = (NamespaceClosure)iterator.done();
                 namespaceOperation = closure.getNamespaceOperation();
@@ -159,6 +159,7 @@ public class NamespaceStateMachine extends StateMachineAdapter {
                     e.printStackTrace();
                 }
             }
+            System.out.println("APPLY : " + Constants.NAMESPACE_OPN.get(namespaceOperation.getOp()));
             if(namespaceOperation != null){
                 boolean status;
                 int respCode;

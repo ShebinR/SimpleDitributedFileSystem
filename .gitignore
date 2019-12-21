@@ -1,3 +1,9 @@
 .idea/*
 NameNodeServer.iml
 *.class
+run/server1/*
+run/server2/*
+run/server3/*
+out/*
+target/*
+log/*

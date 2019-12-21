@@ -1,0 +1,5 @@
+java -jar NameNodeServer.jar ./tmp/server1 namenode 127.0.0.1:8081 127.0.0.1:8081,127.0.0.1:8082,127.0.0.1:8083 ./rack_structure_data_nodes.txt
+java -jar NameNodeServer.jar ./tmp/server2 namenode 127.0.0.1:8082 127.0.0.1:8081,127.0.0.1:8082,127.0.0.1:8083 ./rack_structure_data_nodes.txt
+java -jar NameNodeServer.jar ./tmp/server3 namenode 127.0.0.1:8083 127.0.0.1:8081,127.0.0.1:8082,127.0.0.1:8083 ./rack_structure_data_nodes.txt
+
+java -jar ClientLib.jar namenode 127.0.0.1:8081,127.0.0.1:8082,127.0.0.1:8083

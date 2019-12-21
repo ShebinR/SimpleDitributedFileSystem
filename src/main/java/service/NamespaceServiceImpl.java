@@ -76,18 +76,21 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void create(String path, int fileType, NamespaceClosure closure) {
+        System.out.println("REQ : create " + path + " [" + fileType + "]");
 //        System.out.println("Inside Create of Service");
         applyOperation(NamespaceOperation.createMakedirOrfile(path, fileType), closure);
     }
 
     @Override
     public void remove(String path, int fileType, NamespaceClosure closure) {
+        System.out.println("REQ : remove " + path + " [" + fileType + "]");
 //        System.out.println("Inside Remove of Service");
         applyOperation(NamespaceOperation.createRemovedirOrfile(path, fileType), closure);
     }
 
     @Override
     public void getNameSpaceTree(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "NST" + "]");
 //        System.out.println("Inside Namespace Tree Get of Service");
         if(!isLeader()){
 //            System.out.println("Not leader");
@@ -102,6 +105,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void getClusterUtil(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "CU" + "]");
 //        System.out.println("Inside Cluster Util Get of Service");
         if(!isLeader()){
 //            System.out.println("Not leader");
@@ -116,6 +120,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void getClusterUtilUpdate(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "CUU" + "]");
 //        System.out.println("Inside Cluster Util Update Get of Service");
         if(!isLeader()){
 //            System.out.println("Not leader");
@@ -133,6 +138,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void getCacheUtil(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "CACHE" + "]");
         if(!isLeader()){
 //            System.out.println("Not leader");
             handlerNotLeaderError(closure);
@@ -147,6 +153,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void getServerMetaUtil(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "SMD" + "]");
 //        System.out.println("Inside Cluster metadata of Service");
         if(!isLeader()){
 //            System.out.println("Not leader");
@@ -178,6 +185,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void getServerMetricsUtil(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "MU" + "]");
 //        System.out.println("Inside Cluster metadata of Service");
 //        if(!isLeader()){
 ////            System.out.println("Not leader");
@@ -192,6 +200,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void getClusterElectionTimeout(NamespaceClosure closure) {
+        System.out.println("REQ : get" + " [" + "ETO" + "]");
 //        System.out.println("Inside Cluster Election timeout!");
         if(!isLeader()){
 //            System.out.println("Not leader");
@@ -205,12 +214,14 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void rename(String srcPath, String destPath, int fileType, NamespaceClosure closure) {
+        System.out.println("REQ : rename " + srcPath + " -> " + destPath + " [" + fileType + "]");
 //        System.out.println("Inside Rename of Service");
         applyOperation(NamespaceOperation.createRenameFileOrDir(srcPath, destPath, fileType), closure);
     }
 
     @Override
     public void write(final String path, final int writeBlockSize, final NamespaceClosure closure) {
+        System.out.println("REQ : write " + path + " [" + writeBlockSize + "]");
 //        System.out.println("Inside Write of Service");
         if(!isLeader()){
 //            System.out.println("Not leader");
@@ -276,6 +287,7 @@ public class NamespaceServiceImpl implements NamespaceService {
 
     @Override
     public void read(String path, NamespaceClosure closure) {
+        System.out.println("REQ : read " + path);
 //        System.out.println("Inside Read of Service");
         if(!isLeader()){
 //            System.out.println("Not leader");

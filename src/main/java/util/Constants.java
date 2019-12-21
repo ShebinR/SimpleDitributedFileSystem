@@ -109,4 +109,18 @@ public class Constants {
             RACK_ALIVE, "ALIVE",
             RACK_DEAD, "DEAD"
     );
+
+    static final byte NS_GET = 0x01;
+    static final byte NS_CREATE = 0x02;
+    static final byte NS_REMOVE = 0x03;
+    static final byte NS_RENAME = 0x04;
+    static final byte NS_WRITE = 0x05;
+
+    public static final ImmutableMap<Byte, String> NAMESPACE_OPN = ImmutableMap.of(
+            NS_GET, "GET",
+            NS_CREATE, "CREATE",
+            NS_REMOVE, "REMOVE",
+            NS_RENAME, "RENAME",
+            NS_WRITE, "WRITE"
+    );
 }

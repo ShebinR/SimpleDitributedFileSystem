@@ -8,6 +8,12 @@ import java.io.IOException;
 public class NameNodeServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
+        if(args.length < 4) {
+            System.out.println("Not enough arguments!");
+            System.out.println("Usage : java -jar <ARTIFACT_NAME>" +
+                    " <Data_Path> <Group_Name> <ServerIP> <Group_IDs> <Data_Node_Structure_Locations>");
+            return;
+        }
         final String dataPath = args[0];
         final String groupId = args[1];
         final String serverIdStr = args[2];
